@@ -1,11 +1,8 @@
-//////////////////////////// define functions 
-const resetVehicleListForm = () => {
-    //reset select menus
+const resetQuoteListForm = () => {
     const selectMenuOptions = document.querySelectorAll("#make_selection select option");
     selectMenuOptions.forEach(option => {
-        if (option.text == "View All Makes" || 
-            option.text == "View All Types" || 
-            option.text == "View All Classes") {
+        if (option.text == "View All Categories" || 
+            option.text == "View All Authors") {
                 option.selected = true;
                 option.defaultSelected = true;
         } else {
@@ -13,19 +10,14 @@ const resetVehicleListForm = () => {
             option.defaultSelected = false;
         }
     });
-    //reset radio buttons
     document.getElementById("sortByPrice").checked = true;
     document.getElementById("sortByPrice").defaultChecked = true;
     document.getElementById("sortByYear").checked = false;
     document.getElementById("sortByYear").defaultChecked = false;
 }
-// call initialize function when script loads
 const init = () => {
-    document.getElementById("resetVehicleListForm").addEventListener("click", resetVehicleListForm);
+    document.getElementById("resetQuoteListForm").addEventListener("click", resetQuoteListForm);
 }
-//////////////////////////// end function definitions
-
-//calling initialize function
 init();
 
 

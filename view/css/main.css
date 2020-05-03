@@ -169,13 +169,13 @@ br {
   .red {
       background-color: orangered;
   }
-  .zippylinks {
+  .links {
       padding: 10px;
   }
-  .zippylinks h3 {
+  .links h3 {
     margin-bottom: 10px;
   }
-  .zippylinks p {
+  .links p {
       margin-bottom: 5px;
   }
 
@@ -185,7 +185,7 @@ br {
 #blankLabel {
     display: none;
 }
-#add_vehicle_form, #add_class_form, #add_type_form, #register_form {
+#add_quote_form, #add_author_form, #add_category_form, #register_form {
     margin: .5em 0 1em;
 }
 #register_form {
@@ -195,20 +195,20 @@ br {
     align-items: flex-start; 
     margin: 20px .5em;
 } 
-#add_vehicle_form label, #add_class_form label, #add_type_form label, #register_form label {
+#add_quote_form label, #add_author_form label, #add_category_form label, #register_form label {
     min-width: 6em;
     padding-right: 1em;
     padding-bottom: .5em;
     float: left;
 }
-#add_vehicle_form input, #add_class_form input, #add_type_form input {
+#add_quote_form input, #add_author_form input, #add_category_form input {
     float: left;
 }
-#add_vehicle_form input[type="text"], #add_vehicle_form input[type="number"], #add_class_form input[type="text"], #add_type_form input[type="text"], #register_form input[type="text"] {
+#add_quote_form input[type="text"], #add_quote_form input[type="number"], #add_author_form input[type="text"], #add_category_form input[type="text"], #register_form input[type="text"] {
     width: 15em;
 }
 
-#add_vehicle_form input[type="submit"], #add_class_form input[type="submit"], #add_type_form input[type="submit"], #register_form input[type="submit"] {
+#add_quote_form input[type="submit"], #add_author_form input[type="submit"], #add_category_form input[type="submit"], #register_form input[type="submit"] {
   margin-top: 10px;
 }
 
