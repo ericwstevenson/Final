@@ -35,9 +35,9 @@
 
     function add_category($category_name) {
         global $db;
-        $query = 'INSERT INTO categories (Category)
+        $query = 'INSERT INTO categories (Code, Category)
               VALUES
-                 (:categoryName)';
+                 (Code, :categoryName)';
         $statement = $db->prepare($query);
         $statement->bindValue(':categoryName', $category_name);
         $statement->execute();
