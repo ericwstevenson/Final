@@ -1,7 +1,7 @@
 <?php 
     function get_all_quotes($sort) {
         global $db;
-        if ($sort == 'author'){
+        if ($sort == 'category'){
             $orderby = 'Q.Category';
         } else {
             $orderby = 'Q.Author';
