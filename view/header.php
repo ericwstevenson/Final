@@ -19,7 +19,7 @@
                 if (!isset($_SESSION['userid'])) {
             ?>
                 <p>
-                    <a href="admin-register.php">Register</a>
+                    <a href="register.php">Register</a>
                 </p>
             <?php } else { 
                 $userid = $_SESSION['userid'];
