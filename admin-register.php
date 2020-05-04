@@ -41,7 +41,7 @@
     
 ?>
 <?php include 'view/header-admin.php'; ?>
-<main id="admin-register">
+<main id="admin-login">
     <h2>Register a new admin user</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div>
