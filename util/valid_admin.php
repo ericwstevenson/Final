@@ -1,5 +1,5 @@
 <?php 
     if (!isset($_SESSION['is_valid_admin'])) {
-        header("Location: admin-register.php");
+        header("Location: admin-login.php");
     }
 ?>
