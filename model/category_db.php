@@ -1,7 +1,7 @@
 <?php 
     function get_categories() {
         global $db;
-        $query = 'SELECT * FROM categories ORDER BY categoryID';
+        $query = 'SELECT * FROM categories ORDER BY Category_code';
         $statement = $db->prepare($query);
         $statement->execute();
         $categories = $statement->fetchAll();
@@ -14,19 +14,19 @@
             return NULL;
         }
         global $db;
-        $query = 'SELECT * FROM types WHERE categoryID = :category_id';
+        $query = 'SELECT * FROM types WHERE Category_code = :category_id';
         $statement = $db->prepare($query);
         $statement->bindValue(':category_id', $category_id);
         $statement->execute();
         $category = $statement->fetch();
         $statement->closeCursor();
-        $category_name = $category['categoryName'];
+        $category_name = $category['Category'];
         return $category_name;
     }
 
     function delete_category($category_id) {
         global $db;
-        $query = 'DELETE FROM categories WHERE categoryID = :category_id';
+        $query = 'DELETE FROM categories WHERE Category_code = :category_id';
         $statement = $db->prepare($query);
         $statement->bindValue(':category_id', $category_id);
         $statement->execute();
@@ -35,7 +35,7 @@
 
     function add_category($category_name) {
         global $db;
-        $query = 'INSERT INTO categories (categoryName)
+        $query = 'INSERT INTO categories (Category)
               VALUES
                  (:categoryName)';
         $statement = $db->prepare($query);

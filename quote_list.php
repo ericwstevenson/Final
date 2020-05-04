@@ -7,8 +7,8 @@
                     <select name="category_id">
                         <option value="0">View All Categories</option>
                         <?php foreach ($categories as $category) : ?>
-                            <option value="<?php echo $category['categoryID']; ?>" <?php echo ($category_name == $category['categoryName'] ? "selected" : false)?>>
-                                <?php echo $category['categoryName']; ?>
+                            <option value="<?php echo $category['Category_code']; ?>" <?php echo ($category_name == $category['Category'] ? "selected" : false)?>>
+                                <?php echo $category['Category']; ?>
                             </option>
                         <?php endforeach; ?>
                     </select> 
@@ -19,8 +19,8 @@
                     <select name="author_id">
                         <option value="0">View All Authors</option>
                         <?php foreach ($authors as $author) : ?>
-                            <option value="<?php echo $author['authorID']; ?>" <?php echo ($author_name == $author['authorName'] ? "selected" : false)?>>
-                                <?php echo $author['authorName']; ?>
+                            <option value="<?php echo $author['Author_code']; ?>" <?php echo ($author_name == $author['Author'] ? "selected" : false)?>>
+                                <?php echo $author['Author']; ?>
                             </option>
                         <?php endforeach; ?>
                     </select> 
@@ -53,18 +53,18 @@
                     <tbody>
                         <?php foreach ($quotes as $quote) : ?>
                         <tr>
-                            <td><?php echo $quote['text']; ?></td>
-                            <td><?php echo $quote['author']; ?></td>
-                            <td><?php echo $quote['category']; ?></td>
-                            <?php if (empty($quote['categoryName'])) { ?>
+                            <td><?php echo $quote['Text']; ?></td>
+                            <td><?php echo $quote['Author']; ?></td>
+                            <td><?php echo $quote['Category']; ?></td>
+                            <?php if (empty($quote['Category'])) { ?>
                                 <td>None</td>
                             <?php } else { ?>
-                                <td><?php echo $quote['categoryName']; ?></td>
+                                <td><?php echo $quote['Category']; ?></td>
                             <?php } ?>
-                            <?php if (empty($quote['authorName'])) { ?>
+                            <?php if (empty($quote['Author'])) { ?>
                                 <td>None</td>
                             <?php } else { ?>
-                                <td><?php echo $quote['authorName']; ?></td>
+                                <td><?php echo $quote['Author']; ?></td>
                             <?php } ?>
                         <?php endforeach; ?>
                     </tbody>
@@ -72,7 +72,7 @@
             </div>  
         <?php } else { ?>
             <p>
-                There are no matching quote. 
+                There are no matching quotes. 
             </p>     
         <?php } ?>
     </section>

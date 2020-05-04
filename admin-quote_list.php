@@ -10,8 +10,8 @@
                     <select name="category_id">
                         <option value="0">View All Categories</option>
                         <?php foreach ($categories as $category) : ?>
-                            <option value="<?php echo $category['categoryID']; ?>" <?php echo ($category_name == $category['categoryName'] ? "selected" : false)?>>
-                                <?php echo $type['categoryName']; ?>
+                            <option value="<?php echo $category['Category_code']; ?>" <?php echo ($category_name == $category['Category'] ? "selected" : false)?>>
+                                <?php echo $type['Category']; ?>
                             </option>
                         <?php endforeach; ?>
                     </select> 
@@ -22,8 +22,8 @@
                     <select name="author_id">
                         <option value="0">View All Authors</option>
                         <?php foreach ($authors as $author) : ?>
-                            <option value="<?php echo $author['authorID']; ?>" <?php echo ($author_name == $author['authorName'] ? "selected" : false)?>>
-                                <?php echo $author['authorName']; ?>
+                            <option value="<?php echo $author['Author_code']; ?>" <?php echo ($author_name == $author['Author'] ? "selected" : false)?>>
+                                <?php echo $author['Author']; ?>
                             </option>
                         <?php endforeach; ?>
                     </select> 
@@ -60,21 +60,21 @@
                             <td><?php echo $quote['text']; ?></td>
                             <td><?php echo $quote['author']; ?></td>
                             <td><?php echo $quote['category']; ?></td>
-                            <?php if (empty($quote['categoryName'])) { ?>
+                            <?php if (empty($quote['Category'])) { ?>
                                 <td>None</td>
                             <?php } else { ?>
-                                <td><?php echo $quote['categoryName']; ?></td>
+                                <td><?php echo $quote['Category']; ?></td>
                             <?php } ?>
-                            <?php if (empty($quote['authorName'])) { ?>
+                            <?php if (empty($quote['Author'])) { ?>
                                 <td>None</td>
                             <?php } else { ?>
-                                <td><?php echo $quote['authorName']; ?></td>
+                                <td><?php echo $quote['Author']; ?></td>
                             <?php } ?>                            
                             <td>
                                 <form action="admin.php" method="post">
                                     <input type="hidden" name="action" value="delete_quote">
                                     <input type="hidden" name="quote_id"
-                                        value="<?php echo $quote['quoteID']; ?>">
+                                        value="<?php echo $quote['IndexNum']; ?>">
                                     <input type="submit" value="Remove" class="button red">
                                 </form>
                             </td>

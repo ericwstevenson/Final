@@ -22,12 +22,12 @@
             $quotes = get_all_quotes($sort);
             if (!empty($category_id)) {
                 $quotes = array_filter($quotes, function($array) use ($category_name) {
-                    return $array["categoryName"] == $category_name;
+                    return $array["Category"] == $category_name;
                 });
             }
             if (!empty($author_id)) {
                 $quotes = array_filter($quotes, function($array) use ($author_name) {
-                    return $array["authorName"] == $author_name;
+                    return $array["Author"] == $author_name;
                 });
             }
             $categories = get_categories();
@@ -61,7 +61,7 @@
             }
             break;
         case 'delete_category':
-            $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
+            $category_id = filter_input(INPUT_POST, 'Category_code', FILTER_VALIDATE_INT);
             if (empty($category_id)) {
                 $error = "Missing or incorrect category id.";
                 include('view/header-admin.php');
@@ -73,7 +73,7 @@
             }
             break;
         case 'delete_author':
-            $author_id = filter_input(INPUT_POST, 'author_id', FILTER_VALIDATE_INT);
+            $author_id = filter_input(INPUT_POST, 'Author_code', FILTER_VALIDATE_INT);
             if (empty($author_id)) {
                 $error = "Missing or incorrect author id.";
                 include('view/header-admin.php');
@@ -93,10 +93,10 @@
             break;
         case 'add_quote':
             $text = filter_input(INPUT_POST, 'text', FILTER_VALIDATE_INT);
-            $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
-            $author_id = filter_input(INPUT_POST, 'author_id', FILTER_VALIDATE_INT);
+            $category_id = filter_input(INPUT_POST, 'Category_code', FILTER_VALIDATE_INT);
+            $author_id = filter_input(INPUT_POST, 'Author_code', FILTER_VALIDATE_INT);
             if (empty($text) || empty($category_id) || empty($author_id)) {
-                $error = "Invalid vehicle data. Check all fields and try again.";
+                $error = "Invalid quote. Check all fields and try again.";
                 include('view/header-admin.php');
                 include('errors/error.php');
                 include('view/footer.php');
@@ -106,12 +106,12 @@
             }
             break;
         case 'add_category':
-            $category_name = filter_input(INPUT_POST, 'category_name');
+            $category_name = filter_input(INPUT_POST, 'Category');
             add_category($category_name);
             header("Location: admin.php?action=list_categories");
             break;
         case 'add_author':
-            $author_name = filter_input(INPUT_POST, 'author_name');
+            $author_name = filter_input(INPUT_POST, 'Author');
             add_author($author_name);
             header("Location: admin.php?action=list_authors");
             break;

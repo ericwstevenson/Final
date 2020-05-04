@@ -11,12 +11,12 @@
                 </tr>        
                 <?php foreach ($authors as $author) : ?>
                 <tr>
-                    <td><?php echo $author['authorName']; ?></td>
+                    <td><?php echo $author['Author']; ?></td>
                     <td>
                         <form action="admin.php" method="post">
                             <input type="hidden" name="action" value="delete_author">
                             <input type="hidden" name="author_id"
-                                value="<?php echo $author['authorID']; ?>"/>
+                                value="<?php echo $author['Author_code']; ?>"/>
                             <input type="submit" value="Remove" class="button red" />
                         </form>
                     </td>

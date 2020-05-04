@@ -12,7 +12,7 @@
             $author_id = filter_input(INPUT_GET, 'author_id', FILTER_VALIDATE_INT);
             $sort = filter_input(INPUT_GET, 'sort');
 
-            $sort = ($sort == "year") ? "year" : "price";
+            $sort = ($sort == "author") ? "author" : "category";
 
             $author_name = get_author_name($author_id);
             $category_name = get_category_name($category_id);
@@ -25,12 +25,12 @@
             }
             if (!empty($author_id)) {
                 $quotes = array_filter($quotes, function($array) use ($author_name) {
-                    return $array["authorName"] == $author_name;
+                    return $array["Author"] == $author_name;
                 });
             }
 
-            $types = get_categories();
-            $classes = get_authors();
+            $categories = get_categories();
+            $authors = get_authors();
             include('view/header.php');
             include('quote_list.php');
             include('view/footer.php');

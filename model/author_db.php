@@ -1,7 +1,7 @@
 <?php 
     function get_authors() {
         global $db;
-        $query = 'SELECT * FROM authors ORDER BY authorID';
+        $query = 'SELECT * FROM authors ORDER BY Author_code';
         $statement = $db->prepare($query);
         $statement->execute();
         $authors = $statement->fetchAll();
@@ -14,19 +14,19 @@
             return NULL;
         }
         global $db;
-        $query = 'SELECT * FROM authors WHERE authorID = :author_id';
+        $query = 'SELECT * FROM authors WHERE Author_code = :author_id';
         $statement = $db->prepare($query);
         $statement->bindValue(':author_id', $author_id);
         $statement->execute();
         $author = $statement->fetch();
         $statement->closeCursor();
-        $author_name = $author['authorName'];
+        $author_name = $author['Author'];
         return $author_name;
     }
 
     function delete_author($author_id) {
         global $db;
-        $query = 'DELETE FROM authors WHERE authorID = :author_id';
+        $query = 'DELETE FROM authors WHERE Author_code = :author_id';
         $statement = $db->prepare($query);
         $statement->bindValue(':author_id', $author_id);
         $statement->execute();
@@ -35,7 +35,7 @@
 
     function add_author($author_name) {
         global $db;
-        $query = 'INSERT INTO authors (authorName)
+        $query = 'INSERT INTO authors (Author)
               VALUES
                  (:authorName)';
         $statement = $db->prepare($query);

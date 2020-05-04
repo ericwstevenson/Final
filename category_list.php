@@ -11,12 +11,12 @@
                 </tr>        
                 <?php foreach ($categories as $category) : ?>
                 <tr>
-                    <td><?php echo $category['categoryName']; ?></td>
+                    <td><?php echo $category['Category']; ?></td>
                     <td>
                         <form action="admin.php" method="post">
                             <input type="hidden" name="action" value="delete_category">
                             <input type="hidden" name="category_id"
-                                value="<?php echo $category['categoryID']; ?>"/>
+                                value="<?php echo $category['Category_code']; ?>"/>
                             <input type="submit" value="Remove" class="button red" />
                         </form>
                     </td>
