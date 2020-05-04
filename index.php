@@ -20,7 +20,7 @@
             $quotes = get_all_quotes($sort);
             if (!empty($category_id)) {
                 $quotes = array_filter($quotes, function($array) use ($category_name) {
-                    return $array["categoryName"] == $category_name;
+                    return $array["Category"] == $category_name;
                 });
             }
             if (!empty($author_id)) {
