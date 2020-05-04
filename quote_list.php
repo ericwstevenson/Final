@@ -30,9 +30,9 @@
                 <div>
                     <span>Sort by: </span>
                     <input type="radio" id="sortByAuthor" name="sort" value="author" <?php echo ($sort == "author" ? "checked" : false)?>>
-                    <label for="sortByAuthor">Author</label> 
+                    <label for="sortByAuthor">Category</label> 
                     <input type="radio" id="sortByCategory" name="sort" value="category" <?php echo ($sort == "category" ? "checked" : false)?>>
-                    <label for="sortByCategory">Category</label>
+                    <label for="sortByCategory">Author</label>
                     <input type="submit" value="Search" class="button blue button-slim">
                     <input id="resetQuoteListForm" type="reset" class="button red button-slim">
                 </div>
