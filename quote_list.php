@@ -56,16 +56,6 @@
                             <td><?php echo $quote['Text']; ?></td>
                             <td><?php echo $quote['Author']; ?></td>
                             <td><?php echo $quote['Category']; ?></td>
-                            <?php if (empty($quote['Category'])) { ?>
-                                <td>None</td>
-                            <?php } else { ?>
-                                <td><?php echo $quote['Category']; ?></td>
-                            <?php } ?>
-                            <?php if (empty($quote['Author'])) { ?>
-                                <td>None</td>
-                            <?php } else { ?>
-                                <td><?php echo $quote['Author']; ?></td>
-                            <?php } ?>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
